@@ -127,7 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CopyToClipboard.cpp" />
+    <ClCompile Include="CopyToClipboard.h" />
     <ClCompile Include="defaultSalter&amp;Hasher.cpp" />
+    <ClCompile Include="sha256.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="salt.txt" />
+    <Text Include="sha256-licence.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sha256.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

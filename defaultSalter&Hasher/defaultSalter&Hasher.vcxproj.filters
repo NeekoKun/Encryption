@@ -18,5 +18,23 @@
     <ClCompile Include="defaultSalter&amp;Hasher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="sha256.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CopyToClipboard.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CopyToClipboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="sha256-licence.txt" />
+    <Text Include="salt.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sha256.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

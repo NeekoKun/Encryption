@@ -1,20 +1,44 @@
-// defaultSalter&Hasher.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include <fstream>
+#include "sha256.h"
+#include "CopyToClipboard.h"
 
-#include <iostream>
+using std::string;
+using std::cout;
+using std::cin;
+using std::ifstream;
 
-int main()
+string ToLower(string text)
 {
-    std::cout << "Hello World!\n";
+    string result;
+
+    for (int i = 0; i < sizeof(text) / sizeof(text[0]); i++)
+        result[i] = tolower(text[i]);
+
+    return result;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+int main(int argc, char *argv[])
+{
+    string input;
+    string output;
+    string salt;
+    string lowercase_input;
+    ifstream saltfile("salt.txt");
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    if (saltfile.is_open())
+        saltfile >> salt;
+
+    cout << "Input password: ";
+
+    cin >> input;
+
+    cout << "\n" << lowercase_input << "\n";
+
+    output = sha256(lowercase_input+salt);
+
+    cout << output;
+
+    CopyTextToClipboard(output);
+
+    return 0;
+}
